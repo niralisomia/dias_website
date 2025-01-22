@@ -9,21 +9,63 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0; /* Remove padding from body */
         }
+
+        .sticky-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #472156; /* Using your existing color theme */
+            color: white;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+            box-sizing: border-box; /* Makes padding included in width calculation */
+        }
+
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px; /* Add some padding on the sides */
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
+            margin-top: 80px; /* Space for the banner */
         }
+
         h1 {
-            color: #0366d6;
+            color: #472156;
+            margin: 0; /* Remove default margin for banner title */
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 600px) {
+            .sticky-banner {
+                padding: 10px;
+            }
+
+            .container {
+                margin-top: 60px; /* Slightly less space on mobile */
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <header class="sticky-banner">
+        <div class="banner-content">
+            <h1 style="color: white;">Welcome to My Site</h1>
+        </div>
+    </header>
     <div class="container">
-        <h1>Welcome to My Site</h1>
+        <h2 style="color: #472156;">Content Title</h2>
         <p>If you can see this, GitHub Pages is working!</p>
+        <!-- Add more content here -->
     </div>
 </body>
 </html>
